@@ -1,5 +1,4 @@
 package controllers;
-
 import java.io.IOException;
 import java.sql.Timestamp;
 
@@ -12,14 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import models.Message;
 import utils.DBUtil;
-
 /**
  * Servlet implementation class CreateServlet
  */
 @WebServlet("/create")
 public class CreateServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -27,7 +24,6 @@ public class CreateServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
@@ -40,20 +36,17 @@ public class CreateServlet extends HttpServlet {
 
 
 
+
             String content = request.getParameter("content");
             m.setContent(content);
-
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             m.setCreated_at(currentTime);
             m.setUpdated_at(currentTime);
-
             em.getTransaction().begin();
             em.persist(m);
             em.getTransaction().commit();
             em.close();
-
             response.sendRedirect(request.getContextPath() + "/index");
         }
     }
-
 }
