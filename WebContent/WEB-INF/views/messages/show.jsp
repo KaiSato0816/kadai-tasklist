@@ -7,10 +7,7 @@
 
         <h2>id : ${message.id} のタスク詳細ページ</h2>
 
-        <p>
-            タスク：
-            <c:out value="${message.title}" />
-        </p>
+
         <p>
             タスクの詳細：
             <c:out value="${message.content}" />

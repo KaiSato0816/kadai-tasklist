@@ -23,7 +23,7 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
- 
+
 
 
     @Column(name = "content", length = 255, nullable = false)
@@ -39,7 +39,7 @@ public class Message {
         this.id = id;
     }
 
-    
+
 
     public String getContent() {
         return content;
